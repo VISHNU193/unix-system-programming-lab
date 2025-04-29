@@ -5,9 +5,10 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/wait.h>
+
 int main()
 {
-    int fd = open("test.txt", O_RDWR);
+    int fd = open("input.txt", O_RDWR);
     if (fd == -1)
     {
         perror("open");

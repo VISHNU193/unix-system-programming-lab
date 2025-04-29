@@ -1,4 +1,4 @@
-// Write a C program to create a child process and show how parent and child processes will share the text file and justify that both parent and child share the same file offset.
+// Write a C program to display the file content in reverse order using lseek system call.
 
 #include <stdio.h>
 #include <fcntl.h>

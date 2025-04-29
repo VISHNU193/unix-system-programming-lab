@@ -5,7 +5,7 @@
 #include <fcntl.h>
 
 int main() {
-    int fd1 = open("file.txt", O_RDONLY);
+    int fd1 = open("sample.txt", O_RDONLY);
     int fd2 = dup(fd1);        // copies to lowest free fd
     int fd3 = dup2(fd1, 10);   // copies to specified fd (10)
 
