@@ -11,6 +11,7 @@
         "*.jsx": "javascriptreact",
         "*.js": "javascriptreact",
         ".stylelintrc": "jsonc",
-        "new": "c"
+        "new": "c",
+        "stdlib.h": "c"
     }
 }
