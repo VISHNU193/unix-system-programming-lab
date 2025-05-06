@@ -21,7 +21,7 @@ int main() {
     } else {
         // Parent process (does not wait for child)
         printf("Parent process (PID: %d) continues running...\n", getpid());
-        printf("Check 'ps aux | grep Z' to see the zombie process.\n");
+        printf("Check 'ps -el | grep Z' to see the zombie process.\n");
         sleep(10);  // Parent sleeps, child remains a zombie
         printf("Parent process exiting...\n");
     }
