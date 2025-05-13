@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+/home/vishnu-kumar-k/all-code/unix-system-programming-lab/lab9/p1/echoall "myarg2" "$@"
+
+
+# $@ represents all the cmd passed to the script file
