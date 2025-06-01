@@ -1,0 +1,44 @@
+sample test
+
+  }
+  pox.setIRLedCurrent(MAX30100_LED_CURR_24MA); // Adjust LED current
+}
+
+void loop() {
+  pox.update();
+  if (millis() - tsLastReport > REPORTING_PERIOD_MS) {
+    Serial.print("HR: ");
+    Serial.print(pox.getHeartRate());
+    Serial.print("bpm | SpO2: ");
+    Serial.print(pox.getSpO2());
+    Serial.println("%");
+    tsLastReport = millis();
+  }
+}
+5. Lower I2C Speed
+Replace I2C_SPEED_FAST with I2C_SPEED_STANDARD (100 kHz) in the initialization:
+
+cpp
+if (!particleSensor.begin(Wire, I2C_SPEED_STANDARD)) { ... }
+6. Power Stability
+Add a 10µF capacitor between the MAX30100’s VIN and GND to stabilize power.
+
+Common Fixes for ESP_ERR_INVALID_STATE
+Reinitialize I2C Bus:
+Add Wire.end() before Wire.begin() to reset the bus:
+
+cpp
+void setup() {
+  Wire.end(); // Reset I2C bus
+  Wire.begin(SDA_PIN, SCL_PIN);
+}
+Check GPIO Conflicts:
+Ensure GPIO8/9 are not used for other functions (e.g., SPI, strapping pins).
+
+Update Libraries/Arduino Core:
+Ensure you’re using the latest:
+
+ESP32 Arduino Core (for ESP32-S2 support).
+
+MAX30100 Library.
+

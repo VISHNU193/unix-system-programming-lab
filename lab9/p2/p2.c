@@ -20,14 +20,14 @@ int main(void) {
     }
 
     if (pid == 0) {
-        // Child: execute with custom environment
+
         printf("\n[Child] Executing echoall with custom environment:\n");
         if (execle("./echoall", "echoall", "arg1", "arg2", (char *)0, env_init) < 0) {
             perror("execle error");
             exit(1);
         }
     } else {
-        // Parent: wait and then execute with default environment
+
         if (waitpid(pid, NULL, 0) < 0) {
             perror("wait error");
             exit(1);

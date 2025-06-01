@@ -11,6 +11,6 @@
         "*.jsx": "javascriptreact",
         "*.js": "javascriptreact",
         ".stylelintrc": "jsonc",
-        "cstdlib": "c"
+        "wait.h": "c"
     }
 }
